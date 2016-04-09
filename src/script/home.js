@@ -7,9 +7,9 @@ export class f {
 		'url',
 		'geolocation'
 	];
-	constructor(scope, ngdilalog, http, name, geo) {
+	constructor(scope, dilalog, http, name, geo) {
 		this.scope = scope;
-		this.dialog = ngdilalog;
+		this.dialog = dilalog;
 		this.http = http.post;
 		this._url = name;
 		this.geo  = 'SIN UBICACION';
@@ -19,19 +19,21 @@ export class f {
 	}
 
 	sender (){
-		this.http(`${this._url}${this.class}/with/key/WM_9WK0RoXywnW0harCb_`, {
-			'value1' : `${this.name} <${this.email}>`,
-			'value2' : this.movil,
-			'value3' : this.geo,
-		}).then(() => {
-			this.name = '';
-			this.movil = '';
-			this.email = '';
-			this.class = '';
+		if(this.email && this.name){
+			this.http(`${this._url}${this.class}/with/key/WM_9WK0RoXywnW0harCb_`, {
+				'value1' : `${this.name} <${this.email}>`,
+				'value2' : this.movil,
+				'value3' : this.geo,
+			}).then(() => {
+				this.name = '';
+				this.movil = '';
+				this.email = '';
+				this.class = '';
 
-			this.dialog.open({
-				template : 'ok.html',
-			});
-		});
+				this.dialog.open({
+					template : 'ok.html'
+				});
+			});	
+		}
 	}
 }
