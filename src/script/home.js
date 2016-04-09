@@ -1,14 +1,20 @@
-const url = '';
 export const name = 'home';
 export class f {
-	constructor(scope, ngdilalog, http) {
+	static $inject = [
+		'$scope',
+		'ngDialog',
+		'$http',
+		'url'
+	];
+	constructor(scope, ngdilalog, http, name) {
 		this.scope = scope;
 		this.dialog = ngdilalog;
 		this.http = http.post;
+		this._url = name;
 	}
 
 	sender (){
-		this.http(url, this.data).then((err) => {
+		this.http(this._url, this.data).then((err) => {
 			this.dialog.open({
 				template: 'externalTemplate.html',
 				scope: this.scope
@@ -20,9 +26,3 @@ export class f {
 		this.dialog.closeAll();
 	}
 }
-
-f.$inject = [
-		'$scope',
-		'ngDialog',
-		'$http'
-	];

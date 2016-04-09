@@ -1,43 +1,62 @@
-extends out
+doctype html
+html( ng-app="open" )
+	head
+		meta(charset='utf-8')
+		meta( name='HandheldFriendly', content='True')
+		meta( name='MobileOptimized', content='320')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta( name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+		title OpenSide
+		link( href='https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css')
+		link( rel="stylesheet", href="ng.css" )
+		link( rel="stylesheet", href="start.css" )
+		script( src="app.js" )
+	body.ng-grid
+		.all-100( win-Height=".logos" )
+			.all-100.logos.large-bottom-space.xlarge-bottom-space.medium-bottom-space
+				h3.push-center hola
 
-block body
-	.all-100.logo
-		.push-center
-			img()
+			.column-group.text.ng-form.all-100.gutters.large-top-space.xlarge-top-space.medium-top-space( ng-controller="home as l" )
+				.all-50.small-100.tiny-100.large-top-space.xlarge-top-space.medium-top-space
+					.large-padding.xlarge-padding.medium-padding.small-half-padding.tiny-half-padding
+						ul.text
+							li='¿Te gusta la tecnologia y los medios digitales?'
+							li='¿Sabias que esta area compatible con cualquier profesión?'
 
+						p Si respondiste #[b si] a cualquiera de estas dos preguntas, debes saber #[b esta oportunidad esta al alcance de todos.]
 
-	.column-group.text.ng-form.all-100( ng-controller="home as l" )
-		.all-50.small-100.tiny-100
-			ul.text
-				li ¿Te gusta la tecnologia y los medios digitales?
-				li ¿Sabias que esta area compatible con cualquier profesión?
+						ul.select.all-100
+							h4.color-blue Elige el laboratorio que quieres aprender
+							li.all-30.align-center
+								label.all-100( for="diseno" ) 
+									.circule.push-center: .click( class="{{ l.class === 'diseno' }}-check" )
+									p.blue= 'Diseño Gráfico'
+								input.ng-hide.all-hide#diseno( type="radio", name="class", value="diseno", ng-model="l.class")
+							li.all-30.align-center
+								label.all-100( for="3d" )
+									.circule.push-center: .click( class="{{ l.class === '3d' }}-check" )
+									p.blue Desarrollo 3D
+								input.ng-hide.all-hide#3d( type="radio", name="class", value="3d", ng-model="l.class")
+							li.all-30.align-center
+								label.all-100( for="video" ) 
+									.circule.push-center: .click( class="{{ l.class === 'video' }}-check" )
+									p.blue Audiovisuales
+								input.ng-hide.all-hide#video( type="radio", name="class", value="video", ng-model="l.class")
 
-			p Si respondiste #[b si] a cualquiera de estas dos preguntas, debes saber #[b esta oportunidad esta al alcance de todos.]
+				.all-50.small-100.tiny-100.large-top-space.xlarge-top-space.medium-top-space
+					.large-padding.xlarge-padding.medium-padding.me.small-half-padding.tiny-half-padding
+						h2 empieza a aprender
+						.control-group
+							label.ng-hide.all-hide Nombre
+							.control.required: input.half-padding#name( placeholder="Nombre y Apellidos *", type="text", ng-model="l.name"  )
+						.control-group
+							label.ng-hide.all-hide Email
+							.control.required: input.half-padding#email( placeholder="E-Mail *", type="email", ng-model="l.email"  )
+						.control-group
+							label.ng-hide.all-hide Movil
+							.control.required: input.half-padding#tel( placeholder="Celular *", type="text", ng-model="l.movil"  )
 
-			ul.select.all-100
-				h4 Elige el laboratorio que quieres aprender
-				li.all-30
-					input#diseno( type="radio", name="class", value="diseno", ng-model="l.class")
-					label( for="diseno" ) Diseño Gráfico
-				li.all-30
-					input#3d( type="radio", name="class", value="3d", ng-model="l.class")
-					label( for="3d" ) Desarrollo 3D
-				li.all-30
-					input#video( type="radio", name="class", value="video", ng-model="l.class")
-					label( for="video" ) Audiovisuales
+						p.tip * Requerido
+						.control-group.top-space
+							button.ng-button.orange.all-100.half-padding( ng-click="l.sender()") ¡Inscribete Ahora!
 
-		.all-50.small-100.tiny-100
-			h2 empieza a aprender
-			.control-group
-				label.ng-hide Nombre
-				.control.required: input#name( placeholder="Nombre y Apellidos", type="text", ng-model="l.name"  )
-			.control-group
-				label.ng-hide Email
-				.control.required: input#email( placeholder="E-Mail", type="email", ng-model="l.email"  )
-			.control-group
-				label.ng-hide Movil
-				.control.required: input#tel( placeholder="Celular", type="text", ng-model="l.movil"  )
-
-			p.tip * Requerido
-			.control-group
-				button.ng-button.oragne( ng-click="l.sender()") ¡Inscribete Ahora!

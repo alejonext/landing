@@ -1,0 +1,91 @@
+/**
+ * Ink
+ *
+ * A set of tools for quick development of web interfaces.
+ *
+ * @package   Ink
+ * @author    Sapo Ink Team
+ * @license   http://opensource.org/licenses/MIT MIT
+ * @link      http://ink.sapo.pt
+ * @version   3.1.10
+ */
+
+// Import Compass Core
+@import "contrib/compass/css3";
+@import "contrib/compass/utilities";
+
+// Import Font Awesome
+// @import "contrib/font-awesome/font-awesome";
+
+// IMPORT CONFIG FILES (THESE CONTAIN VARIABLE DEFINITIONS)
+@import "config/common";
+@import "config/typography";
+@import "config/colors";
+@import "config/alerts";
+@import "config/buttons";
+@import "config/classnames";
+@import "config/forms";
+@import "config/grid";
+@import "config/labels";
+@import "config/badges";
+@import "config/navigation";
+@import "config/tables";
+@import "config/images";
+@import "config/js";
+
+.me {
+	background-color: $blue;
+	color : $white;
+	h2, .tips, p, p.tip {
+		color : $white;
+	} 
+}
+
+.color-blue {
+	color : $blue;
+}
+
+ul{
+	&.text {
+		list-style-type: none;
+		li {
+			padding-left: 1.5em; 
+			&:before {
+	   			content: "•"; /* Insert content that looks like bullets */
+				padding-right: 1em;
+				color: $blue; /* Or a color you prefer */
+			}
+		}
+	}
+
+	&.select {
+		list-style-type: none;
+		p {
+			color : $blue;
+		}
+		.circule {
+			height: 2em;
+			width: 2em;
+			min-height: 2em;
+			min-width: 2em;
+			border: solid $black;
+			@include border-radius( 50%); 
+			.true-check {
+				height: 1em;
+				width: 1em;
+				min-height: 1em;
+				min-width: 1em;
+				background-color: $blue;
+				margin-left: 0.33em;
+				margin-top: 0.33em;
+				@include border-radius( 50%); 
+			}
+		}
+	}
+}
+
+// IMPORT CONFIG FILES (THESE CONTAIN VARIABLE DEFINITIONS)
+@import "mixins/quick-start";
+
+@include generate-quick-start($grid-breakpoints);
+

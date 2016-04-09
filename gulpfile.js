@@ -55,5 +55,5 @@ gulp.task('default', [ 'script', 'style', 'view' ]);
 gulp.task('watch', ['default'] , function () {
 	gulp.watch(src.view, ['view']);
 	gulp.watch(src.style, ['style']);
-	gulp.watch(src.client, [ 'script']);
+	gulp.watch(src.script, [ 'script']);
 });
