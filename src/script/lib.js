@@ -5,7 +5,6 @@ import 'angularjs-geolocation';
 import * as h from './home.js';
 import * as a from './minH.js';
 
-
 angular
 	.module('open', [ 'ng', 'ngMessages', 'ngDialog', 'geolocation'])
 	.controller(h.name, h.f)
