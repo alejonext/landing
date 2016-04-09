@@ -1,0 +1,43 @@
+extends out
+
+block body
+	.all-100.logo
+		.push-center
+			img()
+
+
+	.column-group.text.ng-form.all-100( ng-controller="home as l" )
+		.all-50.small-100.tiny-100
+			ul.text
+				li ¿Te gusta la tecnologia y los medios digitales?
+				li ¿Sabias que esta area compatible con cualquier profesión?
+
+			p Si respondiste #[b si] a cualquiera de estas dos preguntas, debes saber #[b esta oportunidad esta al alcance de todos.]
+
+			ul.select.all-100
+				h4 Elige el laboratorio que quieres aprender
+				li.all-30
+					input#diseno( type="radio", name="class", value="diseno", ng-model="l.class")
+					label( for="diseno" ) Diseño Gráfico
+				li.all-30
+					input#3d( type="radio", name="class", value="3d", ng-model="l.class")
+					label( for="3d" ) Desarrollo 3D
+				li.all-30
+					input#video( type="radio", name="class", value="video", ng-model="l.class")
+					label( for="video" ) Audiovisuales
+
+		.all-50.small-100.tiny-100
+			h2 empieza a aprender
+			.control-group
+				label.ng-hide Nombre
+				.control.required: input#name( placeholder="Nombre y Apellidos", type="text", ng-model="l.name"  )
+			.control-group
+				label.ng-hide Email
+				.control.required: input#email( placeholder="E-Mail", type="email", ng-model="l.email"  )
+			.control-group
+				label.ng-hide Movil
+				.control.required: input#tel( placeholder="Celular", type="text", ng-model="l.movil"  )
+
+			p.tip * Requerido
+			.control-group
+				button.ng-button.oragne( ng-click="l.sender()") ¡Inscribete Ahora!
