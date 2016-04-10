@@ -24,32 +24,33 @@ html( ng-app="open" )
 							li ¿Te gusta la tecnologia y los medios digitales?
 							li ¿Sabias que esta area compatible con cualquier profesión?
 
-						p Si respondiste #[b si] a cualquiera de estas dos preguntas, debes saber #[b esta oportunidad esta al alcance de todos.]
+						p.align-center Si respondiste #[b si] a cualquiera de estas dos preguntas, debes saber #[b esta que oportunidad esta al alcance de todos.]
 
-						ul.select.all-100
-							h4.color-blue Elige el laboratorio que quieres aprender
-							li.all-30.align-center
+						h4.color-blue.align-center Elige el laboratorio que quieres aprender
+
+						ul.select.all-100.gutters.column-group
+							li.all-33.align-center
 								label.all-100( for="diseno" ) 
 									.circule.push-center: .click( class="{{ l.class === 'diseno' }}-check" )
-									p.blue= 'Diseño Gráfico'
+									b.color-blue= 'Diseño Gráfico'
 								input.ng-hide.all-hide#diseno( type="radio", name="class", value="diseno", ng-model="l.class",  ng-required )
-							li.all-30.align-center
+							li.all-33.align-center
 								label.all-100( for="3d" )
 									.circule.push-center: .click( class="{{ l.class === '3d' }}-check" )
-									p.blue Desarrollo 3D
+									b.color-blue Desarrollo 3D
 								input.ng-hide.all-hide#3d( type="radio", name="class", value="3d", ng-model="l.class",  ng-required )
-							li.all-30.align-center
+							li.all-33.align-center
 								label.all-100( for="video" ) 
 									.circule.push-center: .click( class="{{ l.class === 'video' }}-check" )
-									p.blue Audiovisuales
+									b.color-blue Audiovisuales
 								input.ng-hide.all-hide#video( type="radio", name="class", value="video", ng-model="l.class", ng-required )
 
 				.all-50.small-100.tiny-100.large-top-space.xlarge-top-space.medium-top-space
 					.large-padding.xlarge-padding.medium-padding.me.small-half-padding.tiny-half-padding
-						h2 empieza a aprender
+						h2.align-center empieza a aprender
 						.control-group
 							label.ng-hide.all-hide Nombre
-							.control.required: input.half-padding#name( placeholder="Nombre y Apellidos *", type="text", ng-model="l.name", ng-required )
+							.control.required: input.half-padding#name( placeholder="Nombres y Apellidos *", type="text", ng-model="l.name", ng-required )
 						.control-group
 							label.ng-hide.all-hide Email
 							.control.required: input.half-padding#email( placeholder="E-Mail *", type="email", ng-model="l.email",  ng-required  )
@@ -59,5 +60,5 @@ html( ng-app="open" )
 
 						p.tip * Requerido
 						.control-group.top-space
-							button.ng-button.orange.all-100.half-padding( ng-click="l.sender()" ) ¡Inscribete Ahora!
+							button.ng-button.orange.all-100.half-padding( ng-click="l.sender()" ): h5.white.no-margin ¡Inscribete Ahora!
 					

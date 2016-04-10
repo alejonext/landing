@@ -39,6 +39,10 @@
 @import "config/images";
 @import "config/js";
 
+.white {
+	color: $white;
+}
+
 .me {
 	background-color: $blue;
 	color : $white;
@@ -57,17 +61,6 @@
 }
 
 ul{
-	&.text {
-		list-style-type: none;
-		li {
-			padding-left: 1.5em; 
-			&:before {
-	   			content: "•"; /* Insert content that looks like bullets */
-				padding-right: 1em;
-				color: $blue; /* Or a color you prefer */
-			}
-		}
-	}
 
 	&.select {
 		list-style-type: none;
