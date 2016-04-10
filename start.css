@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**
  * Ink
  *
@@ -393,6 +392,9 @@ body.ngdialog-open, html.ngdialog-open {
  *                 outside a @media query let's you use the grid in IE8.
  *  
  */
+.white {
+  color: #fff; }
+
 .me {
   background-color: #3FA9F5;
   color: #fff;
@@ -406,17 +408,6 @@ body.ngdialog-open, html.ngdialog-open {
 
 .color-blue {
   color: #3FA9F5; }
-
-ul.text {
-  list-style-type: none; }
-  ul.text li {
-    padding-left: 1.5em; }
-    ul.text li:before {
-      content: "•";
-      /* Insert content that looks like bullets */
-      padding-right: 1em;
-      color: #3FA9F5;
-      /* Or a color you prefer */ }
 
 ul.select {
   list-style-type: none; }
